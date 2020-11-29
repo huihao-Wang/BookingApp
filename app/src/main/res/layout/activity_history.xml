@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    tools:context=".history">
+
+    <View
+        android:id="@+id/vGreenLine_1"
+        android:layout_width="wrap_content"
+        android:layout_height="10dp"
+        android:background="@drawable/green_line"/>
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/date"
+        android:layout_below="@id/vGreenLine_1"
+        android:padding="8dp" />
+
+    <View
+        android:id="@+id/vGreenLine"
+        android:layout_width="wrap_content"
+        android:layout_height="10dp"
+        android:background="@drawable/green_line"
+        android:layout_below="@id/spinner"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/history_recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/vGreenLine"
+        android:scrollbars="vertical" />
+
+    <View
+        android:id="@+id/vGreenLine2"
+        android:layout_width="wrap_content"
+        android:layout_height="10dp"
+        android:layout_below="@id/history_recyclerView"
+        android:background="@drawable/green_line" />
+
+    <TextView
+        android:id="@+id/tvNoHistoryData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="No history data"
+        android:textSize="20dp"
+        android:visibility="gone" />
+
+</RelativeLayout>

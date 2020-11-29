@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">BookingApp</string>
+    <string name="title_activity_main_page">MainPage</string>
+    <string name="tab_text_1">Booking</string>
+    <string name="tab_text_2">Profile</string>
+    <string name="sportName">Sport Name</string>
+
+    <string-array name="court_name">
+        <item>Badminton Hall 1</item>
+        <item>Badminton Hall 2</item>
+        <item>Badminton Hall 3</item>
+        <item>Badminton Hall 4</item>
+        <item>Badminton Hall 5</item>
+        <item>Badminton Hall 6</item>
+    </string-array>
+
+    <array name="court_img">
+        <item>@drawable/court_img</item>
+        <item>@drawable/court_img_2</item>
+        <item>@drawable/court_img_3</item>
+        <item>@drawable/court_img_4</item>
+        <item>@drawable/court_img_5</item>
+        <item>@drawable/court_img_6</item>
+    </array>
+
+    <string-array name="date">
+        <item>All History</item>
+    </string-array>
+</resources>

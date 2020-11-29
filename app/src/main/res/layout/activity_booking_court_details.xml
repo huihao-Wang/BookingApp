@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BookingCourt_details">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:background="@drawable/img_badminton"/>
+
+    <TextView
+        android:id="@+id/tvDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:padding="8dp"
+        android:layout_marginLeft="5dp"
+        android:layout_alignBottom="@+id/imageView"
+        android:textColor="@color/white"
+        android:textSize="30dp" />
+
+    <ImageView
+        android:id="@+id/imgCourt"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="20dp"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:background="@drawable/court_img_2"
+        android:layout_below="@id/imageView"/>
+
+    <TextView
+        android:id="@+id/tvCourtName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Badminton Hall"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_below="@+id/imageView"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="75dp"
+        android:layout_toEndOf="@+id/imgCourt"
+        android:layout_toRightOf="@+id/imgCourt" />
+
+    <ImageView
+        android:id="@+id/imageView_free_booking"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:background="@drawable/free_booking"
+        android:layout_below="@id/imageView"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="100dp"
+        android:layout_marginTop="18dp"/>
+
+    <TextView
+        android:id="@+id/tvAvailable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageView"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="17dp"
+        android:layout_marginRight="38dp"
+        android:text="Available"
+        android:textSize="12dp"/>
+
+    <ImageView
+        android:id="@+id/imageView_booking_red"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:background="@drawable/booking_red"
+        android:layout_below="@id/imageView_free_booking"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="100dp"
+        android:layout_marginTop="8dp"/>
+
+    <TextView
+        android:id="@+id/tvNotAvailable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvAvailable"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="7dp"
+        android:text="Not Available"
+        android:textSize="12dp"/>
+
+    <ImageView
+        android:id="@+id/imageView_free_booking_green"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:background="@drawable/free_booking_green"
+        android:layout_below="@id/imageView_booking_red"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="100dp"
+        android:layout_marginTop="8dp"/>
+
+    <TextView
+        android:id="@+id/tvBook"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvNotAvailable"
+        android:layout_marginTop="7dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="60dp"
+        android:text="Book"
+        android:textSize="12dp"/>
+
+    <ImageView
+        android:id="@+id/imageView_free_booking_blue"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:background="@drawable/booking_blue"
+        android:layout_below="@id/imageView_free_booking_green"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="100dp"
+        android:layout_marginTop="8dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvBook"
+        android:layout_marginTop="6dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="16dp"
+        android:text="Own Booking"
+        android:textSize="12dp"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar_getBookingImg"
+        android:layout_width="90dp"
+        android:layout_height="80dp"
+        android:layout_below="@id/imageView"
+        android:visibility="visible"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="22dp"/>
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/green_line"
+        android:layout_below="@id/imgCourt"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_below="@+id/view1"
+        android:layout_marginTop="10dp"
+        android:id="@+id/book_constraintLayout">
+
+
+        <TextView
+            android:id="@+id/tv10AM_11AM"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="10AM - 11AM"
+            app:layout_constraintEnd_toStartOf="@+id/tv11AM_12PM"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/img_tick_10AM_11AM"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="@+id/tv10AM_11AM"
+            app:layout_constraintStart_toStartOf="@+id/tv10AM_11AM"
+            app:layout_constraintTop_toBottomOf="@+id/tv10AM_11AM" />
+
+        <TextView
+            android:id="@+id/tv11AM_12PM"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="11AM - 12PM"
+            app:layout_constraintEnd_toStartOf="@+id/tv12PM_1PM"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tv10AM_11AM"
+            app:layout_constraintTop_toTopOf="@+id/tv10AM_11AM" />
+
+        <ImageView
+            android:id="@+id/img_tick_11AM_12PM"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="@+id/tv11AM_12PM"
+            app:layout_constraintStart_toStartOf="@+id/tv11AM_12PM"
+            app:layout_constraintTop_toBottomOf="@+id/tv11AM_12PM" />
+
+        <TextView
+            android:id="@+id/tv12PM_1PM"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12PM - 1 PM"
+            app:layout_constraintEnd_toStartOf="@+id/tv1PM_2PM"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tv11AM_12PM"
+            app:layout_constraintTop_toTopOf="@+id/tv11AM_12PM" />
+
+        <ImageView
+            android:id="@+id/img_tick_12PM_1PM"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="@+id/tv12PM_1PM"
+            app:layout_constraintStart_toStartOf="@+id/tv12PM_1PM"
+            app:layout_constraintTop_toBottomOf="@+id/tv12PM_1PM" />
+
+        <TextView
+            android:id="@+id/tv1PM_2PM"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1 PM - 2 PM"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tv12PM_1PM"
+            app:layout_constraintTop_toTopOf="@+id/tv12PM_1PM" />
+
+        <ImageView
+            android:id="@+id/img_tick_1PM_2PM"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="@+id/tv1PM_2PM"
+            app:layout_constraintStart_toStartOf="@+id/tv1PM_2PM"
+            app:layout_constraintTop_toBottomOf="@+id/tv1PM_2PM" />
+
+        <TextView
+            android:id="@+id/tv2PM_3PM"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="2 PM - 3 PM"
+            app:layout_constraintEnd_toEndOf="@+id/tv10AM_11AM"
+            app:layout_constraintStart_toStartOf="@+id/tv10AM_11AM"
+            app:layout_constraintTop_toBottomOf="@+id/img_tick_10AM_11AM" />
+
+        <ImageView
+            android:id="@+id/img_tick_2PM_3PM"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="@+id/tv2PM_3PM"
+            app:layout_constraintStart_toStartOf="@+id/tv2PM_3PM"
+            app:layout_constraintTop_toBottomOf="@+id/tv2PM_3PM" />
+
+        <TextView
+            android:id="@+id/tv3PM_4PM"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3 PM - 4PM"
+            app:layout_constraintEnd_toEndOf="@+id/tv11AM_12PM"
+            app:layout_constraintStart_toStartOf="@+id/tv11AM_12PM"
+            app:layout_constraintTop_toTopOf="@+id/tv2PM_3PM" />
+
+        <ImageView
+            android:id="@+id/img_tick_3PM_4PM"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="@+id/tv3PM_4PM"
+            app:layout_constraintStart_toStartOf="@+id/tv3PM_4PM"
+            app:layout_constraintTop_toBottomOf="@+id/tv3PM_4PM" />
+
+        <TextView
+            android:id="@+id/tv4PM_5PM"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4 PM - 5 PM"
+            app:layout_constraintEnd_toEndOf="@+id/tv12PM_1PM"
+            app:layout_constraintStart_toStartOf="@+id/tv12PM_1PM"
+            app:layout_constraintTop_toTopOf="@+id/tv3PM_4PM" />
+
+        <ImageView
+            android:id="@+id/img_tick_4PM_5PM"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="@+id/tv4PM_5PM"
+            app:layout_constraintStart_toStartOf="@+id/tv4PM_5PM"
+            app:layout_constraintTop_toBottomOf="@+id/tv4PM_5PM" />
+
+        <TextView
+            android:id="@+id/tv5PM_6PM"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5 PM - 6 PM"
+            app:layout_constraintEnd_toEndOf="@+id/tv1PM_2PM"
+            app:layout_constraintStart_toStartOf="@+id/tv1PM_2PM"
+            app:layout_constraintTop_toTopOf="@+id/tv4PM_5PM" />
+
+        <ImageView
+            android:id="@+id/img_tick_5PM_6PM"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="@+id/tv5PM_6PM"
+            app:layout_constraintStart_toStartOf="@+id/tv5PM_6PM"
+            app:layout_constraintTop_toBottomOf="@+id/tv5PM_6PM" />
+
+        <TextView
+            android:id="@+id/tv6PM_7PM"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="6 PM - 7 PM"
+            android:layout_marginTop="30dp"
+            app:layout_constraintEnd_toEndOf="@+id/tv2PM_3PM"
+            app:layout_constraintStart_toStartOf="@+id/tv2PM_3PM"
+            app:layout_constraintTop_toBottomOf="@+id/img_tick_2PM_3PM" />
+
+        <ImageView
+            android:id="@+id/img_tick_6PM_7PM"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="@+id/tv6PM_7PM"
+            app:layout_constraintStart_toStartOf="@+id/tv6PM_7PM"
+            app:layout_constraintTop_toBottomOf="@+id/tv6PM_7PM" />
+
+        <TextView
+            android:id="@+id/tv7PM_8PM"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="7 PM - 8 PM"
+            app:layout_constraintEnd_toEndOf="@+id/tv3PM_4PM"
+            app:layout_constraintStart_toStartOf="@+id/tv3PM_4PM"
+            app:layout_constraintTop_toTopOf="@+id/tv6PM_7PM" />
+
+        <ImageView
+            android:id="@+id/img_tick_7PM_8PM"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="@+id/tv7PM_8PM"
+            app:layout_constraintStart_toStartOf="@+id/tv7PM_8PM"
+            app:layout_constraintTop_toBottomOf="@+id/tv7PM_8PM" />
+
+        <TextView
+            android:id="@+id/tv8PM_9PM"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="8 PM - 9 PM"
+            app:layout_constraintEnd_toEndOf="@+id/tv4PM_5PM"
+            app:layout_constraintStart_toStartOf="@+id/tv4PM_5PM"
+            app:layout_constraintTop_toTopOf="@+id/tv7PM_8PM" />
+
+        <ImageView
+            android:id="@+id/img_tick_8PM_9PM"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="@+id/tv8PM_9PM"
+            app:layout_constraintStart_toStartOf="@+id/tv8PM_9PM"
+            app:layout_constraintTop_toBottomOf="@+id/tv8PM_9PM" />
+
+        <TextView
+            android:id="@+id/tv9PM_10PM"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="9 PM - 10PM"
+            app:layout_constraintEnd_toEndOf="@+id/tv5PM_6PM"
+            app:layout_constraintStart_toStartOf="@+id/tv5PM_6PM"
+            app:layout_constraintTop_toTopOf="@+id/tv8PM_9PM" />
+
+        <ImageView
+            android:id="@+id/img_tick_9PM_10PM"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="@+id/tv9PM_10PM"
+            app:layout_constraintStart_toStartOf="@+id/tv9PM_10PM"
+            app:layout_constraintTop_toBottomOf="@+id/tv9PM_10PM" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_below="@+id/book_constraintLayout"
+        android:layout_marginTop="-20dp"
+        android:background="@drawable/green_line" />
+
+    <TextView
+        android:id="@+id/tvPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/view2"
+        android:layout_marginTop="5dp"
+        android:layout_centerHorizontal="true"
+        android:text="RM 0.00"
+        android:textSize="25dp" />
+
+    <Button
+        android:id="@+id/btnBook"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_button_grey"
+        android:text="Book"
+        android:layout_marginTop="50dp"
+        android:enabled="false"
+        android:textColor="@color/grey"
+        android:layout_below="@id/view2"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>

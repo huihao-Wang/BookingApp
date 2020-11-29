@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/img_recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="-15dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"/>
+
+    <View
+        android:id="@+id/vGreenLine"
+        android:layout_width="wrap_content"
+        android:layout_height="10dp"
+        android:layout_marginTop="-13dp"
+        android:background="@drawable/green_line"
+        android:layout_below="@id/img_recyclerView"/>
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/vGreenLine"
+        android:textColor="@color/dark_green"
+        android:text="Whh Badminton Court"
+        android:textSize="25dp"
+        android:layout_marginLeft="10dp"
+        android:padding="8dp"/>
+
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gym and fitness Center"
+        android:layout_marginTop="-15dp"
+        android:padding="8dp"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@id/tvName"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tv1">
+
+        <ImageView
+            android:id="@+id/img_Price"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/ic_attach_money_black_24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="2dp"
+            android:layout_height="50dp"
+            android:background="@drawable/straight_line"
+            app:layout_constraintBottom_toBottomOf="@+id/tv2"
+            app:layout_constraintEnd_toStartOf="@+id/tv2"
+            app:layout_constraintTop_toTopOf="@+id/tv2" />
+
+        <TextView
+            android:id="@+id/tv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:padding="8dp"
+            android:text="Fee Count \n10:00AM - 6:00PM (Per Hour) = RM 10.00\n7:00PM - 10:00PM (Per Hour) = RM 15.00"
+            app:layout_constraintBottom_toBottomOf="@+id/img_Price"
+            app:layout_constraintStart_toEndOf="@+id/img_Price"
+            app:layout_constraintTop_toTopOf="@+id/img_Price" />
+
+        <ImageView
+            android:id="@+id/img_address"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/address"
+            app:layout_constraintStart_toStartOf="@+id/img_Price"
+            app:layout_constraintTop_toBottomOf="@+id/img_Price" />
+
+        <View
+            android:id="@+id/view5"
+            android:layout_width="2dp"
+            android:layout_height="30dp"
+            android:background="@drawable/straight_line"
+            app:layout_constraintBottom_toBottomOf="@+id/tv3"
+            app:layout_constraintEnd_toStartOf="@+id/tv3"
+            app:layout_constraintTop_toTopOf="@+id/tv3" />
+
+        <TextView
+            android:id="@+id/tv3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="1, Lorong Mesra Indah 1, \nTaman Mesra, 13400 Butterworth, Pulau Pinang"
+            app:layout_constraintBottom_toBottomOf="@+id/img_address"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/tv2"
+            app:layout_constraintTop_toTopOf="@+id/img_address" />
+
+        <ImageView
+            android:id="@+id/img_phone"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/ic_phone_black_24dp"
+            app:layout_constraintStart_toStartOf="@+id/img_address"
+            app:layout_constraintTop_toBottomOf="@+id/img_address" />
+
+        <View
+            android:id="@+id/view7"
+            android:layout_width="2dp"
+            android:layout_height="20dp"
+            android:background="@drawable/straight_line"
+            app:layout_constraintBottom_toBottomOf="@+id/tv4"
+            app:layout_constraintEnd_toStartOf="@+id/tv4"
+            app:layout_constraintTop_toTopOf="@+id/tv4" />
+
+        <TextView
+            android:id="@+id/tv4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="Phone : 04-316 6783"
+            app:layout_constraintBottom_toBottomOf="@+id/img_phone"
+            app:layout_constraintStart_toStartOf="@+id/tv3"
+            app:layout_constraintTop_toTopOf="@+id/img_phone"/>
+
+        <ImageView
+            android:id="@+id/img_time"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/time"
+            app:layout_constraintStart_toStartOf="@+id/img_phone"
+            app:layout_constraintTop_toBottomOf="@+id/img_phone" />
+
+        <View
+            android:layout_width="2dp"
+            android:layout_height="20dp"
+            android:background="@drawable/straight_line"
+            app:layout_constraintBottom_toBottomOf="@+id/tv5"
+            app:layout_constraintEnd_toStartOf="@+id/tv5"
+            app:layout_constraintTop_toTopOf="@+id/tv5" />
+
+        <TextView
+            android:id="@+id/tv5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="Hours  : Closed . Opens 10AM "
+            app:layout_constraintBottom_toBottomOf="@+id/img_time"
+            app:layout_constraintStart_toEndOf="@+id/view7"
+            app:layout_constraintTop_toTopOf="@+id/img_time" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</RelativeLayout>
