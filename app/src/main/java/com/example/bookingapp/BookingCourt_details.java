@@ -100,96 +100,7 @@ public class BookingCourt_details extends AppCompatActivity {
 
                 if (task.isSuccessful()){
 
-                    DocumentReference documentReference_1 = db.collection("Calendar").document(dateCombine)
-                            .collection("Badminton Court").document(courtName);
-
-                    documentReference_1.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-                        @Override
-                        public void onSuccess(DocumentSnapshot documentSnapshot) {
-
-                            progressBar.setVisibility(View.GONE);
-
-                            String time = null;
-
-                            time = documentSnapshot.getString("10AM - 11AM");
-                            img10AM_11AM.setImageResource(setBookingImage(time));
-                            if (!time.equals("")){
-                                img10AM_11AM.setEnabled(false);
-                            }
-
-                            time = documentSnapshot.getString("11AM - 12PM");
-                            img11AM_12PM.setImageResource(setBookingImage(time));
-                            if (!time.equals("")){
-                                img11AM_12PM.setEnabled(false);
-                            }
-
-                            time = documentSnapshot.getString("12PM - 1 PM");
-                            img12PM_1PM.setImageResource(setBookingImage(time));
-                            if (!time.equals("")){
-                                img12PM_1PM.setEnabled(false);
-                            }
-
-                            time = documentSnapshot.getString("1 PM - 2 PM");
-                            img1PM_2PM.setImageResource(setBookingImage(time));
-                            if (!time.equals("")){
-                                img1PM_2PM.setEnabled(false);
-                            }
-
-                            time = documentSnapshot.getString("2 PM - 3 PM");
-                            img2PM_3PM.setImageResource(setBookingImage(time));
-                            if (!time.equals("")){
-                                img2PM_3PM.setEnabled(false);
-                            }
-
-                            time = documentSnapshot.getString("3 PM - 4 PM");
-                            img3PM_4PM.setImageResource(setBookingImage(time));
-                            if (!time.equals("")){
-                                img3PM_4PM.setEnabled(false);
-                            }
-
-                            time = documentSnapshot.getString("4 PM - 5 PM");
-                            img4PM_5PM.setImageResource(setBookingImage(time));
-                            if (!time.equals("")){
-                                img4PM_5PM.setEnabled(false);
-                            }
-
-                            time = documentSnapshot.getString("5 PM - 6 PM");
-                            img5PM_6PM.setImageResource(setBookingImage(time));
-                            if (!time.equals("")){
-                                img5PM_6PM.setEnabled(false);
-                            }
-
-                            time = documentSnapshot.getString("6 PM - 7 PM");
-                            img6PM_7PM.setImageResource(setBookingImage(time));
-                            if (!time.equals("")){
-                                img6PM_7PM.setEnabled(false);
-                            }
-
-                            time = documentSnapshot.getString("7 PM - 8 PM");
-                            img7PM_8PM.setImageResource(setBookingImage(time));
-                            if (!time.equals("")){
-                                img7PM_8PM.setEnabled(false);
-                            }
-
-                            time = documentSnapshot.getString("8 PM - 9 PM");
-                            img8PM_9PM.setImageResource(setBookingImage(time));
-                            if (!time.equals("")){
-                                img8PM_9PM.setEnabled(false);
-                            }
-
-                            time = documentSnapshot.getString("9 PM - 10PM");
-                            img9PM_10PM.setImageResource(setBookingImage(time));
-                            if (!time.equals("")){
-                                img9PM_10PM.setEnabled(false);
-                            }
-
-                        }
-                    }).addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(BookingCourt_details.this, "Error " + e.toString(), Toast.LENGTH_LONG).show();
-                        }
-                    });
+                    getTimeBooking();
 
                 } else {
                     Toast.makeText(BookingCourt_details.this, "Data get unsuccessful", Toast.LENGTH_SHORT).show();
@@ -601,90 +512,7 @@ public class BookingCourt_details extends AppCompatActivity {
                 time_8PM  = "";
                 time_9PM  = "";
 
-
-                //Get the time booking to set the booking image and enable
-                DocumentReference documentReference_2 = db.collection("Calendar").document(dateCombine)
-                        .collection("Badminton Court").document(courtName);
-
-                documentReference_2.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-                    @Override
-                    public void onSuccess(DocumentSnapshot documentSnapshot) {
-                        String time = null;
-
-                        time = documentSnapshot.getString("10AM - 11AM");
-                        img10AM_11AM.setImageResource(setBookingImage(time));
-                        if (!time.equals("")){
-                            img10AM_11AM.setEnabled(false);
-                        }
-
-                        time = documentSnapshot.getString("11AM - 12PM");
-                        img11AM_12PM.setImageResource(setBookingImage(time));
-                        if (!time.equals("")){
-                            img11AM_12PM.setEnabled(false);
-                        }
-
-                        time = documentSnapshot.getString("12PM - 1 PM");
-                        img12PM_1PM.setImageResource(setBookingImage(time));
-                        if (!time.equals("")){
-                            img12PM_1PM.setEnabled(false);
-                        }
-
-                        time = documentSnapshot.getString("1 PM - 2 PM");
-                        img1PM_2PM.setImageResource(setBookingImage(time));
-                        if (!time.equals("")){
-                            img1PM_2PM.setEnabled(false);
-                        }
-
-                        time = documentSnapshot.getString("2 PM - 3 PM");
-                        img2PM_3PM.setImageResource(setBookingImage(time));
-                        if (!time.equals("")){
-                            img2PM_3PM.setEnabled(false);
-                        }
-
-                        time = documentSnapshot.getString("3 PM - 4 PM");
-                        img3PM_4PM.setImageResource(setBookingImage(time));
-                        if (!time.equals("")){
-                            img3PM_4PM.setEnabled(false);
-                        }
-
-                        time = documentSnapshot.getString("4 PM - 5 PM");
-                        img4PM_5PM.setImageResource(setBookingImage(time));
-                        if (!time.equals("")){
-                            img4PM_5PM.setEnabled(false);
-                        }
-
-                        time = documentSnapshot.getString("5 PM - 6 PM");
-                        img5PM_6PM.setImageResource(setBookingImage(time));
-                        if (!time.equals("")){
-                            img5PM_6PM.setEnabled(false);
-                        }
-
-                        time = documentSnapshot.getString("6 PM - 7 PM");
-                        img6PM_7PM.setImageResource(setBookingImage(time));
-                        if (!time.equals("")){
-                            img6PM_7PM.setEnabled(false);
-                        }
-
-                        time = documentSnapshot.getString("7 PM - 8 PM");
-                        img7PM_8PM.setImageResource(setBookingImage(time));
-                        if (!time.equals("")){
-                            img7PM_8PM.setEnabled(false);
-                        }
-
-                        time = documentSnapshot.getString("8 PM - 9 PM");
-                        img8PM_9PM.setImageResource(setBookingImage(time));
-                        if (!time.equals("")){
-                            img8PM_9PM.setEnabled(false);
-                        }
-
-                        time = documentSnapshot.getString("9 PM - 10PM");
-                        img9PM_10PM.setImageResource(setBookingImage(time));
-                        if (!time.equals("")){
-                            img9PM_10PM.setEnabled(false);
-                        }
-
-                    }
-                });
+                getTimeBooking();
 
                 //Store the time booking to check history
                 DocumentReference storeCheckHistory = db.collection("Check History").document(userID)
@@ -740,6 +568,75 @@ public class BookingCourt_details extends AppCompatActivity {
         tvCourtDate.setText(date);
     }
 
+    public void getTimeBooking(){
+        DocumentReference documentReference_1 = db.collection("Calendar").document(dateCombine)
+                .collection("Badminton Court").document(courtName);
+
+        documentReference_1.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+
+                progressBar.setVisibility(View.GONE);
+
+                String time = null;
+
+                time = documentSnapshot.getString("10AM - 11AM");
+                img10AM_11AM.setImageResource(setBookingImage(time));
+                setBookingEnable(time, img10AM_11AM);
+
+                time = documentSnapshot.getString("11AM - 12PM");
+                img11AM_12PM.setImageResource(setBookingImage(time));
+                setBookingEnable(time, img11AM_12PM);
+
+                time = documentSnapshot.getString("12PM - 1 PM");
+                img12PM_1PM.setImageResource(setBookingImage(time));
+                setBookingEnable(time, img12PM_1PM);
+
+                time = documentSnapshot.getString("1 PM - 2 PM");
+                img1PM_2PM.setImageResource(setBookingImage(time));
+                setBookingEnable(time, img1PM_2PM);
+
+                time = documentSnapshot.getString("2 PM - 3 PM");
+                img2PM_3PM.setImageResource(setBookingImage(time));
+                setBookingEnable(time, img2PM_3PM);
+
+                time = documentSnapshot.getString("3 PM - 4 PM");
+                img3PM_4PM.setImageResource(setBookingImage(time));
+                setBookingEnable(time, img3PM_4PM);
+
+                time = documentSnapshot.getString("4 PM - 5 PM");
+                img4PM_5PM.setImageResource(setBookingImage(time));
+                setBookingEnable(time, img4PM_5PM);
+
+                time = documentSnapshot.getString("5 PM - 6 PM");
+                img5PM_6PM.setImageResource(setBookingImage(time));
+                setBookingEnable(time, img5PM_6PM);
+
+                time = documentSnapshot.getString("6 PM - 7 PM");
+                img6PM_7PM.setImageResource(setBookingImage(time));
+                setBookingEnable(time, img6PM_7PM);
+
+                time = documentSnapshot.getString("7 PM - 8 PM");
+                img7PM_8PM.setImageResource(setBookingImage(time));
+                setBookingEnable(time, img7PM_8PM);
+
+                time = documentSnapshot.getString("8 PM - 9 PM");
+                img8PM_9PM.setImageResource(setBookingImage(time));
+                setBookingEnable(time, img8PM_9PM);
+
+                time = documentSnapshot.getString("9 PM - 10PM");
+                img9PM_10PM.setImageResource(setBookingImage(time));
+                setBookingEnable(time, img9PM_10PM);
+
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(BookingCourt_details.this, "Error " + e.toString(), Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+
     private void addHistoryNum(String historyCount){
         DocumentReference documentReference = db.collection("Users").document(userID);
         documentReference.update("History", historyCount);
@@ -761,6 +658,12 @@ public class BookingCourt_details extends AppCompatActivity {
         }
 
         return img;
+    }
+
+    public void setBookingEnable(String time, ImageView img){
+        if (!time.equals("")){
+            img.setEnabled(false);
+        }
     }
 
     public void setBtnBookEnable(){

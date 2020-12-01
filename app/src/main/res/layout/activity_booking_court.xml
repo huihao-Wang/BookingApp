@@ -18,10 +18,12 @@
         android:layout_height="wrap_content"
         android:text="TextView"
         android:padding="8dp"
-        android:layout_marginLeft="10dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
         android:layout_alignTop="@+id/imageView"
         android:textColor="@color/white"
-        android:textSize="30dp" />
+        android:textSize="35dp" />
 
     <TextView
         android:id="@+id/tvSelect"
