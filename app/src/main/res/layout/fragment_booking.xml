@@ -17,9 +17,9 @@
     <View
         android:id="@+id/vGreenLine"
         android:layout_width="wrap_content"
-        android:layout_height="10dp"
-        android:layout_marginTop="-13dp"
-        android:background="@drawable/green_line"
+        android:layout_height="2dp"
+        android:layout_marginTop="-10dp"
+        android:background="@color/dark_green"
         android:layout_below="@id/img_recyclerView"/>
 
     <TextView
@@ -43,10 +43,19 @@
         android:layout_marginLeft="10dp"
         android:layout_below="@id/tvName"/>
 
+    <ImageView
+        android:id="@+id/background_img"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="5dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/tv1"
+        android:background="@color/dark_green"/>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/tv1">
+        android:layout_below="@id/background_img">
 
         <ImageView
             android:id="@+id/img_Price"
@@ -60,22 +69,23 @@
 
         <View
             android:id="@+id/view"
-            android:layout_width="2dp"
-            android:layout_height="50dp"
-            android:background="@drawable/straight_line"
-            app:layout_constraintBottom_toBottomOf="@+id/tv2"
-            app:layout_constraintEnd_toStartOf="@+id/tv2"
-            app:layout_constraintTop_toTopOf="@+id/tv2" />
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/arrow"
+            app:layout_constraintBottom_toBottomOf="@+id/img_Price"
+            app:layout_constraintStart_toEndOf="@+id/img_Price"
+            app:layout_constraintTop_toTopOf="@+id/img_Price" />
 
         <TextView
             android:id="@+id/tv2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
             android:padding="8dp"
+            android:textStyle="bold"
             android:text="Fee Count \n10:00AM - 6:00PM (Per Hour) = RM 10.00\n7:00PM - 10:00PM (Per Hour) = RM 15.00"
             app:layout_constraintBottom_toBottomOf="@+id/img_Price"
-            app:layout_constraintStart_toEndOf="@+id/img_Price"
+            app:layout_constraintStart_toEndOf="@+id/view"
             app:layout_constraintTop_toTopOf="@+id/img_Price" />
 
         <ImageView
@@ -90,23 +100,23 @@
 
         <View
             android:id="@+id/view5"
-            android:layout_width="2dp"
-            android:layout_height="30dp"
-            android:background="@drawable/straight_line"
-            app:layout_constraintBottom_toBottomOf="@+id/tv3"
-            app:layout_constraintEnd_toStartOf="@+id/tv3"
-            app:layout_constraintTop_toTopOf="@+id/tv3" />
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/arrow"
+            app:layout_constraintBottom_toBottomOf="@+id/img_address"
+            app:layout_constraintStart_toEndOf="@+id/img_address"
+            app:layout_constraintTop_toTopOf="@+id/img_address" />
 
         <TextView
             android:id="@+id/tv3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="8dp"
+            android:textStyle="bold"
             android:text="1, Lorong Mesra Indah 1, \nTaman Mesra, 13400 Butterworth, Pulau Pinang"
             app:layout_constraintBottom_toBottomOf="@+id/img_address"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/tv2"
+            app:layout_constraintStart_toEndOf="@+id/view5"
             app:layout_constraintTop_toTopOf="@+id/img_address" />
 
         <ImageView
@@ -122,22 +132,24 @@
 
         <View
             android:id="@+id/view7"
-            android:layout_width="2dp"
-            android:layout_height="20dp"
-            android:background="@drawable/straight_line"
-            app:layout_constraintBottom_toBottomOf="@+id/tv4"
-            app:layout_constraintEnd_toStartOf="@+id/tv4"
-            app:layout_constraintTop_toTopOf="@+id/tv4" />
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/arrow"
+            app:layout_constraintBottom_toBottomOf="@+id/img_phone"
+            app:layout_constraintStart_toEndOf="@+id/img_phone"
+            app:layout_constraintTop_toTopOf="@+id/img_phone" />
 
         <TextView
             android:id="@+id/tv4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="8dp"
+            android:textStyle="bold"
             android:text="Phone : 04-316 6783"
             app:layout_constraintBottom_toBottomOf="@+id/img_phone"
-            app:layout_constraintStart_toStartOf="@+id/tv3"
-            app:layout_constraintTop_toTopOf="@+id/img_phone"/>
+            app:layout_constraintStart_toEndOf="@+id/view7"
+            app:layout_constraintTop_toTopOf="@+id/img_phone" />
 
         <ImageView
             android:id="@+id/img_time"
@@ -149,22 +161,26 @@
             app:layout_constraintTop_toBottomOf="@+id/img_phone" />
 
         <View
-            android:layout_width="2dp"
-            android:layout_height="20dp"
-            android:background="@drawable/straight_line"
-            app:layout_constraintBottom_toBottomOf="@+id/tv5"
-            app:layout_constraintEnd_toStartOf="@+id/tv5"
-            app:layout_constraintTop_toTopOf="@+id/tv5" />
+            android:id="@+id/view8"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/arrow"
+            app:layout_constraintBottom_toBottomOf="@+id/img_time"
+            app:layout_constraintStart_toEndOf="@+id/img_time"
+            app:layout_constraintTop_toTopOf="@+id/img_time" />
 
         <TextView
             android:id="@+id/tv5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="8dp"
-            android:text="Hours  : Closed . Opens 10AM "
+            android:textStyle="bold"
+            android:text="Hours  : Closed 10PM . Opens 10AM "
             app:layout_constraintBottom_toBottomOf="@+id/img_time"
-            app:layout_constraintStart_toEndOf="@+id/view7"
-            app:layout_constraintTop_toTopOf="@+id/img_time" />
+            app:layout_constraintStart_toEndOf="@+id/view8"
+            app:layout_constraintTop_toTopOf="@+id/img_time"
+            app:layout_constraintVertical_bias="0.0" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
