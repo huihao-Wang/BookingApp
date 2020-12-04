@@ -125,15 +125,15 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }
 
-                if (TextUtils.isEmpty(cfnPassword)) {
-                    edCfnPassword.setError("Enter the password again");
-                    edCfnPassword.requestFocus();
-                    return;
-                }
-
                 if (password.length() < 6) {
                     edPassword.setError("Password too short, must at least 6 character");
                     edPassword.requestFocus();
+                    return;
+                }
+
+                if (TextUtils.isEmpty(cfnPassword)) {
+                    edCfnPassword.setError("Enter the password again");
+                    edCfnPassword.requestFocus();
                     return;
                 }
 
